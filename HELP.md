@@ -31,14 +31,10 @@
 > Gradle(그루비 기반 오픈소스로 공개된 빌드도구)은 의존관계가 있는 라이브러리를 함께 다운로드 한다.
 
 > 스프링 부트 라이브러리
-
 - spring-boot-starter-web
-
   - spring-boot-starter-tomcat: 톰캣 (웹서버)
   - spring-webmvc: 스프링 웹 MVC
-
 - spring-boot-starter-thymeleaf: 타임리프 템플릿 엔진(View)
-
 - spring-boot-starter(공통): 스프링 부트 + 스프링 코어 + 로깅
   - spring-boot
     - spring-core
@@ -46,7 +42,6 @@
     - logback, slf4j
 
 > 테스트 라이브러리
-
 - spring-boot-starter-test
   - junit: 테스트 프레임워크
   - mockito: 목 라이브러리
@@ -157,3 +152,14 @@ public class HelloController {
 
 8. <body>태그 내부에서, <p th:text="'thymeleaf 테스트 중입니다. ' + ${data}"></p>와 같은 방법으로 넘겨받은 모델의 attributeName(key) 이름을 사용해 value값을 웹 브라우저에 출력 할 수 있다.
 ```
+
+
+
+### 3. 빌드하여 실행하기 (window)
+1. 명령 프롬프트 이동 후 스프링 프로젝트까지 cd이동
+2. 빌드 명령어인 gradlew(gradlew build) 입력
+3. cd build/libs로 빌드한 폴더 내부로 이동
+4. java -jar [생성된 .jar 파일명] 입력
+5. 8080포트에 서버가 실행된다.
+
+> Tip: 스프링 프로젝트까지 cd이동 후, ```gradle clean build``` 명령어 입력 시 빌드폴더가 사라짐
