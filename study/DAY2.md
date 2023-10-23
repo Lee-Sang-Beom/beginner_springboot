@@ -1,15 +1,14 @@
-# STUDY (2023-10-05)
-
+# DAY2
 
 ### 1. View 환경설정 - Welcome Page 만들기
 
-#### 1-1) 정적 페이지 만들어보기 
+#### 1-1) 정적 페이지 만들어보기
 
 - [springboot의 index.html 관련 설명](https://docs.spring.io/spring-boot/docs/current/reference/html/web.html#web)
 
-    - 스프링 부트는 정적 및 템플릿 시작 페이지를 지원한다.
-    - 먼저 구성된 정적 콘텐츠 위치(static)에서 index.html 파일을 찾는다. 만약, 찾을 수 없으면 인덱스 템플릿(index.template)을 찾는다.
-    - 둘 중 하나가 발견되면 자동으로 애플리케이션의 시작 페이지로 사용된다.
+  - 스프링 부트는 정적 및 템플릿 시작 페이지를 지원한다.
+  - 먼저 구성된 정적 콘텐츠 위치(static)에서 index.html 파일을 찾는다. 만약, 찾을 수 없으면 인덱스 템플릿(index.template)을 찾는다.
+  - 둘 중 하나가 발견되면 자동으로 애플리케이션의 시작 페이지로 사용된다.
 
 ```
 [resources/static/index.html]
@@ -31,8 +30,8 @@
 
 - thymeleaf 템플릿 엔진 (템플릿 엔진 : HTML을 정적으로 전달하는 것이 아니라, HTML을 서버에서 동적으로 바꿔서 전달하게끔 도와주는 도구)
 - thymeleaf 공식 사이트: https://www.thymeleaf.org/
-    - 스프링 공식 튜토리얼: https://spring.io/guides/gs/serving-web-content/
-    - 스프링부트 메뉴얼: https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot-features.html#boot-features-spring-mvc-template-engines
+  - 스프링 공식 튜토리얼: https://spring.io/guides/gs/serving-web-content/
+  - 스프링부트 메뉴얼: https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot-features.html#boot-features-spring-mvc-template-engines
 
 > src/main/java/hello/hellosptring/controller/HelloControll.java
 
@@ -85,7 +84,7 @@ public class HelloController {
 
 > 해당 코드의 동작 과정을 이해하기 쉽게 설명하면 아래와 같다
 
-```
+````
 1. 먼저 웹 브라우저에서 localhost:8080/hello URL로 진입한다.
 
 2. Spring Boot는 Tomcat이라는 웹 서버(정확히는 WAS)를 내장하고 있는데, 이 내장 Tomcat서버가 경로 slot이 "/hello"임을 확인하고 spring한테 해당 경로에 대해 물어본다.
@@ -105,3 +104,4 @@ public class HelloController {
 
 8. <body>태그 내부에서, <p th:text="'thymeleaf 테스트 중입니다. ' + ${data}"></p>와 같은 방법으로 넘겨받은 모델의 attributeName(key) 이름을 사용해 value값을 웹 브라우저에 출력 할 수 있다.
 ```원
+````
