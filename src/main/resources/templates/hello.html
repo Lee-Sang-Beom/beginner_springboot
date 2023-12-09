@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<!--th는 thymeleaf 템플릿 엔진이 선언된 부분이다. 스키마 선언-->
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title>Hello</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  </head>
-  <body>
-    <!--
- - thymeleaf 문법사용: p태그 안에 텍스트로서 "thymeleaf 테스트 중입니다. ' + ${data}" 내용이 들어감.
- - controller/HelloController.java에서 @GetMapping("hello") 한 부분에서, /hello 진입 시, public String hello(){} 함수가 실행되고,
-   model(MVC)에 [key: "data", value:"hello spring!"]의 속성을 추가했다.
- - 그리고 해당 파일의 아래 부분에서는 key를 통해 value를 불러온 것이다.
--->
-    <p th:text="'thymeleaf 테스트 중입니다. ' + ${data}"></p>
-  </body>
+
+<head>
+  <title>Hello</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+  <p th:text="'thymeleaf 테스트 중입니다. ' + ${data}"></p>
+</body>
+
 </html>
