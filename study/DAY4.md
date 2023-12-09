@@ -54,7 +54,7 @@ public class HelloController {
 </html>
 ```
 
-#### MVC, 템플릿 엔진 처리 과정 (이미지 참고)
+#### MVC, 템플릿 엔진 처리 과정 (강의자료 이미지 참고)
 
 1. 웹 브라우저에서 `localhost:8080/hello-mvc` 요청을 한다.
 2. 해당 요청은 내장 tomcat server에게 먼저 전달된다.
