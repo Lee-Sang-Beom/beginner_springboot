@@ -1,8 +1,9 @@
 # DAY4
 
-### 1. MVC
+### 1. MVC와 템플릿 엔진
 
 - MVC : Model, View, Controller
+- mvc와 템플릿 엔진 방식은 템플릿 엔진을 Model, View, Controller 방식으로 쪼개고, HTML을 좀 더 동적인 방식으로 프로그래밍한 후에 렌더링을 한 HTML 파일을 클라이언트에게 전달해주는 방식
 
 #### Controller
 
