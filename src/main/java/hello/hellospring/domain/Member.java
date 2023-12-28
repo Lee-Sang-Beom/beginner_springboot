@@ -7,13 +7,14 @@ public class Member {
     private String name;
 
     public Long getId() {
+        // id값 전달 (getter)
         return id;
     }
 
     public void setId(Long id) {
+        // id값 세팅 (setter)
         this.id = id;
     }
-
     public String getName() {
         return name;
     }
