@@ -83,6 +83,7 @@ public class MemoryMemberRepository implements MemberRepository {
     // 회원 정보를 메모리에 저장하기 위해 선언
     // key는 회원의 아이디(Long), value값은 Member 타입임
     // 해당 코드는 동시성 문제 발생
+    // 즉, store라는 Map 타입의 클래스 변수가 저장소 역할을 함
     private static Map<Long, Member> store = new HashMap<>();
 
     // seq: 0,1,2,...로 키값을 생성함.
@@ -120,6 +121,7 @@ public class MemoryMemberRepository implements MemberRepository {
     public Optional<Member> findByName(String name) {
         // filter => name이 같은 걸 찾아서 반환한다.
         // 끝까지 돌렸는데도 못찾으면 Optional이 null을 감싸서 반환
+        // findAny는 하나의 회원만 반환한다.
         return store.values().stream()
                 .filter(member -> member.getName().equals(name))
                 .findAny();
