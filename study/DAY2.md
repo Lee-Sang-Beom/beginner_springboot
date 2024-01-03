@@ -8,7 +8,7 @@
 
 - 스프링 부트는 정적 및 템플릿 시작 페이지를 지원한다.
 
-- 먼저, 구성된 정적 콘텐츠 위치(static)에서 index.html 파일을 찾는다.
+- 먼저, 구성된 정적 콘텐츠 위치(static)에서 **index.html** 파일을 찾는다.
   - 만약, 찾을 수 없으면 인덱스 템플릿(index.template)을 찾는다.
 
 - 둘 중 하나가 발견되면 자동으로 애플리케이션의 시작 페이지로 사용된다.
@@ -17,7 +17,9 @@
 ```    
 <html lang="en">  
 <head>  
-  <meta charset="UTF-8" />  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <title>Document</title></head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <title>Document</title></head>  
 <body>  
   Hello  <a href="/hello">hello</a></body>  
 </html>  
@@ -29,12 +31,9 @@
 - Thymeleaf 템플릿 엔진이라는 이름에서 **템플릿 엔진**이란, HTML을 정적으로 전달하는 것이 아니라, HTML을 서버에서 동적으로 바꿔서 전달하게끔 도와주는 도구를 의미한다.
 
 - 아래는 관련 사이트이다.
-
-> [Thymeleaf 공식 사이트](https://www.thymeleaf.org/)
-
-> [스프링 공식 튜토리얼](https://spring.io/guides/gs/serving-web-content/)
-
-> [스프링부트 메뉴얼](https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot-features.html#boot-features-spring-mvc-template-engines )
+  - [Thymeleaf 공식 사이트](https://www.thymeleaf.org/)
+  - [스프링 공식 튜토리얼](https://spring.io/guides/gs/serving-web-content/)
+  - [스프링부트 메뉴얼](https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-boot-features.html#boot-features-spring-mvc-template-engines )
 
 - **src/main/java/hello/hellosptring/controller/HelloControll.java**
 ```java
@@ -68,7 +67,9 @@ public class HelloController {
 </html>  
 ```  
 
-**동작과정**
+
+##### 3. Thymeleaf 템플릿 엔진 동작과정 살펴보기
+
 - 먼저 웹 브라우저에서 `localhost:8080/hello` URL로 진입한다.
 
 - Spring Boot는 **Tomcat이라는 웹 서버**(정확히는 WAS)를 내장하고 있다.
