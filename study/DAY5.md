@@ -1,10 +1,9 @@
-# DAY5
-
 ### 1. API
 
 - API 방식은 `@ResponseBody` 문자를 반환하는 방법으로 사용할 수 있다.
 - `@ResponseBody`를 사용하면, ViewResolver를 사용하지 않는데, 이는 HTTP의 BODY에 문자 내용을 직접 반환한다는 뜻이다.
 - JSON 형식의 `{key: value , ...}` 형태의 값이 반환된다.
+
 
 #### Controller
 
@@ -63,7 +62,8 @@ public class HelloController {
 
 ```
 
-#### API 처리 과정 (강의자료 이미지 참고)
+
+### 2. API 처리 과정 (강의자료 이미지 참고)
 
 1. 웹 브라우저에서 `localhost:8080/hello-api` 요청을 한다.
 2. 해당 요청은 내장 tomcat server에게 먼저 전달된다.
@@ -76,3 +76,4 @@ public class HelloController {
    - spring은 클라이언트의 HTTP Accept 헤더와 서버에서 작성된 Controller 반환 타입 정보를 알아서 조합해서 **HTTPMessageConverter**가 선택된다.
 
 6. 웹 브라우저에게 반환하는 데이터가 객체 타입이든, string 타입이든 HTTP 응답 헤더의 Body에 데이터를 넣어 반환한다.
+

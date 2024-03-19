@@ -1,16 +1,15 @@
-# DAY7
-
-## 회원 관리 예제 - 백엔드 개발
+### 회원 관리 예제 - 백엔드 개발
 
 - 비즈니스 요구사항 정리
-- **회원 도메인과 리포지토리 만들기 (여기)** 
+- **회원 도메인과 리포지토리 만들기 (여기)**
 - 회원 리포지토리 테스트 케이스 작성
 - 회원 서비스 개발
 - 회원 서비스 테스트
 
----
 
-### 회원 도메인 만들기
+### 1. 회원 도메인 만들기
+
+- `(main/java/hello.hellospring/domain/Member.class)`
 
 ```java
 package hello.hellospring.domain;
@@ -39,9 +38,10 @@ public class Member {
 }
 ```
 
----
 
-### 회원 리포지토리 인터페이스 만들기
+### 2. 회원 리포지토리 인터페이스 만들기
+
+- `(main/java/hello.hellospring/repository/MemberRepository.interface)`
 
 ```java
 package hello.hellospring.repository;
@@ -68,9 +68,10 @@ public interface MemberRepository {
 }
 ```
 
----
 
-### 메소드 정의하기
+### 3. 메소드 정의하기
+
+- `(main/java/hello.hellospring/repository/MemoryMemberRepository.class)`
 
 ```java
 package hello.hellospring.repository;

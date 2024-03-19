@@ -1,17 +1,16 @@
-# DAY10
-
-## 회원 관리 예제 - 백엔드 개발
+### 회원 관리 예제 - 백엔드 개발
 
 - 비즈니스 요구사항 정리
-- 회원 도메인과 리포지토리 만들기 
+- 회원 도메인과 리포지토리 만들기
 - 회원 리포지토리 테스트 케이스 작성
 - 회원 서비스 개발
 - **회원 서비스 테스트 (여기)**
 
----
 
-### 작성 1. MemberSevice(main/java/hello.hellospring/service/MemberService.class)
+### 2. 작성 (1). MemberSevice
 
+- `(main/java/hello.hellospring/service/MemberService.class)
+  `
 ```java
 package hello.hellospring.service;
 
@@ -86,9 +85,10 @@ public class MemberService {
 
 ```
 
----
 
-### 작성 2. MemberServiceTest (test/java/hello.hellospring/service/MemberServiceTest.class)
+### 2. 작성 (2). MemberServiceTest
+
+- `(test/java/hello.hellospring/service/MemberServiceTest.class)`
 
 ```java
 package hello.hellospring.service;
