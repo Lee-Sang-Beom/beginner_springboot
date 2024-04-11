@@ -11,14 +11,15 @@ import java.util.Optional;
 
 // 서비스 클래스는 굉장히 비즈니스와 어울리는 기능과 네이밍을 가짐
 // 반면 리포지토리 클래스는 단순히 저장소에 넣었다 뺐다 하는 기능과 네이밍을 가짐
-@Service
+
+// @Service
 public class MemberService {
     private final MemberRepository memberRepository;
 
     // 내부에서 MemberRepository를 new로 생성하는게 아니라, 외부에서 넣어주도록 변경
     // 이것을 dependency injection(DI)라고 함
 
-    @Autowired
+    // @Autowired
     public MemberService(MemberRepository memberRepository){
         this.memberRepository = memberRepository;
     }

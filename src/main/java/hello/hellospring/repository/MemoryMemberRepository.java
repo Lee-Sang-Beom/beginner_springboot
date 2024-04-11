@@ -4,7 +4,7 @@ import hello.hellospring.domain.Member;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
-@Repository
+// @Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     // 회원 정보를 메모리에 저장하기 위해 선언
