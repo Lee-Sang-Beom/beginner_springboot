@@ -70,12 +70,11 @@ class MemberServiceTest {
         // when 
         memberService.join(member1); // 최초 저장은 문제 없어야 함
 
-        IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2)); // 두번째 콜백으로 넘긴 함수가 실행되면서 1번째로 전달한 예외가 터져주는지 확인하는 구문
+        // // 두번째 콜백으로 넘긴 함수가 실행되면서 1번째로 전달한 예외가 터져주는지 확인하는 구문
+        IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
 //        assertThrows(NullPointerException.class, () -> memberService.join(member2)); // null pointer 에러가 터지는지 기대함 (아니면 테스트 실패)
 
-
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다."); // 에러 안나면 성공
-
 
 
 //        try{

@@ -1,10 +1,12 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 import java.util.Optional;
 
-// 회원 리포지토리 인터페이스: 회원 객체를 저장하는 저장소 
+// 회원 리포지토리 인터페이스: 회원 객체를 저장하는 저장소
 public interface MemberRepository {
 
     // 회원 저장: 저장 시, 저장한 회원정보 반환
