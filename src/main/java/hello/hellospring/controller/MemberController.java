@@ -1,8 +1,15 @@
 package hello.hellospring.controller;
 
+import hello.hellospring.domain.Member;
 import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 // controller라는 annotation이 있으면, 스프링은 동작할 때 MemberController 객체를 생성하여 가지고있는다.
 // 이를, spring container에서, spring bean이 관리된다고 표현한다.
@@ -28,6 +35,31 @@ public class MemberController {
         // 2. 이 때, 이 생성자를 호출한다.
         // 3. 생성자에 @Autowired이 있으면, memberService를 스프링이 스프링 컨테이너에 있는 memberService를 가져와서 연결시켜준다.
         this.memberService = memberService;
+    }
+
+    @GetMapping("/members/new")
+    public String createForm(){
+        return "members/createMemberForm";
+    }
+
+    @GetMapping("/members")
+    public String list(Model model){
+        List<Member> members = memberService.findMembers();
+        System.out.println(members);
+        model.addAttribute("members", members);
+        return "members/memberList";
+    }
+
+    // /members/new 경로에서 발생한 POST 요청이 있는지를 검사하고, 있으면 아래의 create 메소드 실행
+    @PostMapping("/members/new")
+    public String create(MemberForm form){
+        Member member = new Member();
+        member.setName(form.getName());
+        memberService.join(member);
+
+        // 홈 화면으로 사용자 이동
+        // (example: /blog로 이동) -> redirect:/blog
+        return "redirect:/";
     }
 
 }
