@@ -1,8 +1,15 @@
 package hello.hellospring.domain;
 
-// 회원 도메인 만들기(회원 객체)
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+
+@Entity
 public class Member {
-    // 데이터: 회원 아이디, 회원 이름
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
