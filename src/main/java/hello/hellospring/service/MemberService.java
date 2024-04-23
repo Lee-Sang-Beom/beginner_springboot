@@ -22,35 +22,47 @@ public class MemberService {
     // 이것을 dependency injection(DI)라고 함
 
     // @Autowired
-    public MemberService(MemberRepository memberRepository){
+    public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
+
     /**
      * 회원가입
-     *  - 리포지토리에 member 저장 (단, 같은 이름의 중복회원이 있으면 안된다)
-     *  - member의 id 반환 (임의)
+     * - 리포지토리에 member 저장 (단, 같은 이름의 중복회원이 있으면 안된다)
+     * - member의 id 반환 (임의)
      */
     public Long join(Member member) {
-        validateDuplicatedMember(member); // 중복회원 검증
-        memberRepository.save(member);
-        return member.getId();
+        long start = System.currentTimeMillis();
+        try {
+            validateDuplicatedMember(member); // 중복회원 검증
+            memberRepository.save(member);
+            return member.getId();
+        } finally {
+
+        }
     }
 
     /**
      * 전체회원 조회
      */
-    public List<Member> findMembers(){
-        return memberRepository.findAll();
+    public List<Member> findMembers() {
+        long start = System.currentTimeMillis();
+        try {
+            return memberRepository.findAll();
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+        }
     }
 
-    public Optional<Member> findOne(Long memberId){
+    public Optional<Member> findOne(Long memberId) {
         return memberRepository.findById(memberId);
     }
 
     /**
      * 아이디에 해당하는 유저 반환
      */
-    public Optional<Member> findMember(Long memberId){
+    public Optional<Member> findMember(Long memberId) {
         return memberRepository.findById(memberId);
     }
 

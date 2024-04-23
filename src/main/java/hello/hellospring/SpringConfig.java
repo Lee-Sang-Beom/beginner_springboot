@@ -1,5 +1,6 @@
 package hello.hellospring;
 
+import hello.hellospring.aop.TimeTraceAop;
 import hello.hellospring.repository.*;
 import hello.hellospring.service.MemberService;
 import jakarta.persistence.EntityManager;
@@ -13,29 +14,21 @@ import javax.sql.DataSource;
 @Configuration
 public class SpringConfig {
 
-    private DataSource dataSource;
-    private EntityManager em;
-    // public SpringConfig(DataSource dataSource){
-    //     this.dataSource = dataSource;
-    // }
-    @Autowired
-     public SpringConfig(EntityManager em){
-        this.em = em;
-     }
+    private final MemberRepository memberRepository;
 
-    // @Bean: 스프링 빈을 등록할 것이라는 annotation
+    @Autowired
+    public SpringConfig(MemberRepository memberRepository){
+        this.memberRepository = memberRepository;
+    }
+
     @Bean
     public MemberService memberService(){
-        // memberSerivce 인스턴스를 반환하여, memberSerivce 인스턴스를 스프링 빈으로 등록 (스프링 컨테이너에)
-        // 이 때, MemberSerivce 인스턴스를 생성하기 위해서, MemberService의 생성자는 mmemoryMemberRepoitory 인스턴스를 요구한다.
-        return new MemberService(memberRepository());
+        return new MemberService(memberRepository);
     }
-    @Bean
-    public MemberRepository memberRepository(){
-        // 구현체를 리턴해야함. 인터페이스 넣으면 안됨
-        // return new MemoryMemberRepository();
-        // return new JdbcMemberRepository(dataSource);
-        // return new JdbcTemplateMemberRepository(dataSource);
-        return new JpaMemberRepository(em);
-    }
+
+//    @Bean
+//    public TimeTraceAop timeTraceAop(){
+//        return new TimeTraceAop();
+//    }
+
 }
